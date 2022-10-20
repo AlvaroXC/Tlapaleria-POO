@@ -5,4 +5,4 @@ Este es un proyecto de nuestra clase de programación orientada a objetos.
 - Andrea Isabel Torres Perez
 - Hector Joaquin Perez Can 
 - Luis Jonathan Quevedo Saldivar 
-- Alvaro De Jesus Xool Canul
+- Álvaro Xool [@AlvaroXC](https://github.com/AlvaroXC "Click Aquí")
