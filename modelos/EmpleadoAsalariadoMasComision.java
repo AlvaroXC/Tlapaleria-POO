@@ -3,8 +3,8 @@ public class EmpleadoAsalariadoMasComision extends EmpleadoAsalariado{
     private double tarifaComision;
     
     //Constructor
-    public EmpleadoAsalariadoMasComision(String codEmpleado, String nombre, String apPat, String apMat, int nss, double salarioSemanal, double ventasBrutas, double tarifaComision) {
-       super(codEmpleado, nombre, apPat, apMat, nss, salarioSemanal);
+    public EmpleadoAsalariadoMasComision(String codEmpleado, String nombre, String apPat, String apMat, double salarioSemanal, double ventasBrutas, double tarifaComision) {
+       super(codEmpleado, nombre, apPat, apMat, salarioSemanal);
         this.ventasBrutas = ventasBrutas;
         this.tarifaComision = tarifaComision;
     }
