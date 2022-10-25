@@ -29,14 +29,14 @@ public class EmpleadoAsalariadoMasComision extends EmpleadoAsalariado{
 
     //Otro
     @Override    
-    public double obtenerMontoPago() {
+    public double calcularMontoPago() {
         return super.obtenerMontoPago() + getTarifaComision()*getVentasBrutas();
     }
 
     //toString
     @Override
     public String toString() {
-        return super.toString() + "\nSueldo Base: " + getSueldoBase();
+        return super.toString() + "\nVentas Brutas: " + getVentasBrutas() + "\nTarifa de Comision: " + getTarifaComision();
     }
 
 }
