@@ -11,34 +11,34 @@ public class Fecha {
     }
 
     //Método establecer
-    public void EstablecerDia(int dia){
+    public void setDia(int dia){
         this.dia = dia;
     }
 
-    public void EstablecerMes(int mes){
+    public void setMes(int mes){
         this.mes = mes;
     }
 
-    public void EstablecerAnio(int anio){
+    public void setAnio(int anio){
         this.anio = anio;
     }
 
     //Método obtener
-    public int ObtenerDia(){
+    public int getDia(){
         return dia;
     }
 
-    public int ObtenerMes(){
+    public int getMes(){
         return mes;
     }
 
-    public int ObtenerAnio(){
+    public int getAnio(){
         return anio;
     }
 
     //Método toString
     @Override
     public String toString(){
-        return  ObtenerDia() + "/" + ObtenerMes() + "/" + ObtenerAnio();
+        return  getDia() + "/" + getMes() + "/" + getAnio();
     }
 }
