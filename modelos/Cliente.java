@@ -6,26 +6,24 @@ public abstract class Cliente extends Empleado {
     private String apPat;
     private String apMat;
     */
-    private String RFC;
+    private String rfc;
 
      
-    public Cliente(String nombre, String apPat, String apMat, int nss, String rFC) {
-        super(nombre, apPat, apMat, nss);
-        RFC = rFC;
-    }
-
-
-    public String getRFC() {
-        return RFC;
+    public Cliente(String codEmpleado, String nombre, String apPat, String apMat, String rfc) {
+        super(codEmpleado, nombre, apPat, apMat);
+        this.rfc = rfc;
     }
     
+    public void setRFC(String rfc) {
+        this.rfc = rfc;
+    }
 
-    public void setRFC(String rFC) {
-        RFC = rFC;
+    public String getRFC() {
+        return rfc;
     }
 
     @Override
     public String toString(){
-        return super.toString()+"RFC: "+ getRFC();
+        return super.toString()+"\nRFC: "+ getRFC();
     }
 }
