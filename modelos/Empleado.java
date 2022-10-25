@@ -1,21 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-
-/**
- *
- * @author aitor
- */
-public abstract class Empleado implements PorPagar{
+public abstract class Empleado implements Pagar{
+    private String codEmpleado;
     private String nombre;
     private String apPat;
     private String apMat;
-    private int nss;
+    private int nss; //Agregarlo al diagrama
 
     //Constructor
-    public Empleado(String nombre, String apPat, String apMat, int nss){
+    public Empleado(String codEmpleado, String nombre, String apPat, String apMat, int nss){
+        this.codEmpleado = codEmpleado;
         this.nombre = nombre;
         this.apPat = apPat;
         this.apMat = apMat;
@@ -23,6 +15,10 @@ public abstract class Empleado implements PorPagar{
     }
 
     //Métodos set
+    public void setCodEmpleado(String codEmpleado){
+        this.codEmpleado = codEmpleado;
+    }
+    
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
@@ -40,6 +36,10 @@ public abstract class Empleado implements PorPagar{
     }
     
     //Métodos get
+    public String getCodEmpleado(){
+        return codEmpleado;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -56,12 +56,9 @@ public abstract class Empleado implements PorPagar{
         return nss;
     }
     
-    //Codigo para metodo abstracto
-    /*No lo imprimo, no necesito poner código aquí, la clase se vuelve abstracta*/
-    
     //Método toString
     @Override
     public String toString() {
-        return "**Empleado**\nNombre: " + getNombre() + " " + getApPat() + " " + getApMat() + "\nNSS: " + getNSS();
+        return "Código de empleado: " + getCodEmpleado() + "\nNombre: " + getNombre() + " " + getApPat() + " " + getApMat() + "\nNSS: " + getNSS();
     }
 }
