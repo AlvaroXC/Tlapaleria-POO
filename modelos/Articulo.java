@@ -1,4 +1,4 @@
-public abstract class Articulo implements PorPagar{
+public abstract class Articulo implements Pagar{
 
     private String codArt;
     private String desc;
@@ -10,20 +10,8 @@ public abstract class Articulo implements PorPagar{
         this.desc = desc;
         this.precioUnitario = precioUnitario;
         this.cantidad = cantidad;
-    } 
+    }
     
-    public String getCodArt() {
-        return codArt;
-    }
-    public String getDesc() {
-        return desc;
-    }
-    public double getPrecioUnitario() {
-        return precioUnitario;
-    }
-    public int getCantidad() {
-        return cantidad;
-    }
     
     public void setCodArt(String codArt) {
         this.codArt = codArt;
@@ -37,10 +25,24 @@ public abstract class Articulo implements PorPagar{
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+    
+    
+    public String getCodArt() {
+        return codArt;
+    }
+    public String getDesc() {
+        return desc;
+    }
+    public double getPrecioUnitario() {
+        return precioUnitario;
+    }
+    public int getCantidad() {
+        return cantidad;
+    }
 
     @Override
     public String toString(){
 
-        return "Código de articulo"+getCodArt()+"Descripcion: "+getDesc()+"Precio unitario"+getPrecioUnitario()+"Cantidad"+getCantidad();
+        return "Código de artículo: "+getCodArt()+"\nDescripción: "+getDesc()+"\nPrecio unitario: "+getPrecioUnitario()+"\nCantidad: "+getCantidad();
     }
 }
