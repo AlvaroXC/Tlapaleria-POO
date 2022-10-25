@@ -1,18 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author aitor
- */
 public class EmpleadoAsalariado extends Empleado{
     private double salarioSemanal;
     
     //Constructor
-    public EmpleadoAsalariado(String nombre, String apPat, String apMat, int nss, double salarioSemanal) {
-        super(nombre, apPat, apMat, nss);
+    public EmpleadoAsalariado(String codEmpleado, String nombre, String apPat, String apMat, int nss, double salarioSemanal) {
+        super(codEmpleado, nombre, apPat, apMat, nss);
         this.salarioSemanal = salarioSemanal;
     }
     
