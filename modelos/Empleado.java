@@ -3,15 +3,13 @@ public abstract class Empleado implements Pagar{
     private String nombre;
     private String apPat;
     private String apMat;
-    private int nss; //Agregarlo al diagrama
 
     //Constructor
-    public Empleado(String codEmpleado, String nombre, String apPat, String apMat, int nss){
+    public Empleado(String codEmpleado, String nombre, String apPat, String apMat){
         this.codEmpleado = codEmpleado;
         this.nombre = nombre;
         this.apPat = apPat;
         this.apMat = apMat;
-        this.nss = nss;
     }
 
     //Métodos set
@@ -30,10 +28,6 @@ public abstract class Empleado implements Pagar{
     public void setApMaterno(String apMat){
         this.apMat = apMat;
     }
-
-    public void setNSS(int nss){
-        this.nss = nss;
-    }
     
     //Métodos get
     public String getCodEmpleado(){
@@ -51,14 +45,10 @@ public abstract class Empleado implements Pagar{
     public String getApMat() {
         return apMat;
     }
-
-    public int getNSS() {
-        return nss;
-    }
     
     //Método toString
     @Override
     public String toString() {
-        return "Código de empleado: " + getCodEmpleado() + "\nNombre: " + getNombre() + " " + getApPat() + " " + getApMat() + "\nNSS: " + getNSS();
+        return "Código de empleado: " + getCodEmpleado() + "\nNombre: " + getNombre() + " " + getApPat() + " " + getApMat();
     }
 }
