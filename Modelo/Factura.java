@@ -1,3 +1,5 @@
+package Modelo;
+
 public class Factura extends Articulo{
     private String codCliente;
     private String codEmpleado;

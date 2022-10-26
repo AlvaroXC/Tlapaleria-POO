@@ -1,3 +1,5 @@
+package Modelo;
+
 public abstract class Articulo implements Pagar{
 
     private String codArt;
