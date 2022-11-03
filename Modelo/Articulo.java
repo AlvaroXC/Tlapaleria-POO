@@ -1,6 +1,6 @@
 package Modelo;
 
-public abstract class Articulo implements Pagar{
+public class Articulo {
 
     private String codArt;
     private String desc;
