@@ -1,17 +1,40 @@
 package Modelo;
 
-public class Factura extends Articulo{
+public class Factura implements Pagar{
+    private String codArt;
+    private String desc;
+    private double precioUnitario;
+    private int cantidad;
     private String codCliente;
     private String codEmpleado;
-    Fecha fecha;
+    private Fecha fecha;
 
     public Factura(String codArt, String desc, double precioUnitario, int cantidad, String codCliente, String codEmpleado, Fecha fecha) {
-        super(codArt, desc, precioUnitario, cantidad);
+        this.codArt = codArt;
+        this.desc = desc;
+        this.precioUnitario = precioUnitario;
+        this.cantidad = cantidad;
         this.codCliente = codCliente;
         this.codEmpleado = codEmpleado;
         this.fecha = fecha;
     }
 
+
+    public void setCodArt(String codArt) {
+        this.codArt = codArt;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public void setPrecioUnitario(double precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
 
     public void setCodCliente(String codCliente) {
         this.codCliente = codCliente;
@@ -26,6 +49,22 @@ public class Factura extends Articulo{
     }
 
 
+    public String getCodArt() {
+        return codArt;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public double getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
     public String getCodCliente() {
         return codCliente;
     }
@@ -38,6 +77,7 @@ public class Factura extends Articulo{
         return fecha;
     }
     
+
     public double calcularMontoPago(){
         return getPrecioUnitario()*getCantidad();
     }
@@ -45,8 +85,6 @@ public class Factura extends Articulo{
 
     @Override
     public String toString() {
-        return "Código de cliente: " + getCodCliente() + "\nCódigo de empleado: " + getCodEmpleado() + "\nFecha: " + getFecha();
+        return "Código de artículo: " + getCodArt() + "\nDescripción: " + getDesc() + "\nPrecio unitario: " + getPrecioUnitario() + "\nCantidad: " + getCantidad() + "\nCódigo de cliente: " + getCodCliente() + "\nCódigo de empleado: " + getCodEmpleado() + "\nFecha: " + getFecha();
     }
-
-    
 }
