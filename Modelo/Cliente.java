@@ -1,14 +1,14 @@
 package Modelo;
 
 public class Cliente {
-    private String codCliente;
-    private String nombre;
-    private String apPat;
-    private String apMat;
-    private String rfc;
-
-     
-    public Cliente(String codCliente, String nombre, String apPat, String apMat, String rfc) {
+     private String codCliente;
+     private String nombre;
+     private String apPat;
+     private String apMat;
+     private String rfc;
+   
+     //Constructor
+     public cliente(String codCliente, String nombre, String apPat, String apMat, String rfc) {
         this.codCliente = codCliente;
         this.nombre = nombre;
         this.apPat = apPat;
@@ -16,7 +16,7 @@ public class Cliente {
         this.rfc = rfc;
     }
     
-
+    //Método set
     public void setCodCliente(String codCliente) {
         this.codCliente = codCliente;
     }
@@ -37,7 +37,7 @@ public class Cliente {
         this.rfc = rfc;
     }
 
-    
+    //Método get
     public String getCodCliente() {
         return codCliente;
     }
@@ -58,7 +58,7 @@ public class Cliente {
         return rfc;
     }
 
-
+    //Método toString
     @Override
     public String toString(){
         return "Código de empleado: " + getCodCliente() + "\nNombre: " + getNombre() + " " + getApPat() + " " + getApMat()+"\nRFC: "+ getRfc();
