@@ -29,12 +29,15 @@ public class FrmMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnEmpleados.setBackground(new java.awt.Color(0, 153, 153));
-        btnEmpleados.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         btnEmpleados.setText("Empleados");
         btnEmpleados.setPreferredSize(new java.awt.Dimension(90, 25));
+        btnEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpleadosActionPerformed(evt);
+            }
+        });
 
         btnInventario.setBackground(new java.awt.Color(0, 153, 153));
-        btnInventario.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         btnInventario.setText("Inventario");
         btnInventario.setPreferredSize(new java.awt.Dimension(100, 25));
         btnInventario.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -49,12 +52,10 @@ public class FrmMenu extends javax.swing.JFrame {
         });
 
         btnClientes.setBackground(new java.awt.Color(0, 153, 153));
-        btnClientes.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         btnClientes.setText("Clientes");
         btnClientes.setPreferredSize(new java.awt.Dimension(100, 25));
 
         btnFacturas.setBackground(new java.awt.Color(0, 153, 153));
-        btnFacturas.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         btnFacturas.setText("Facturas");
         btnFacturas.setPreferredSize(new java.awt.Dimension(100, 25));
         btnFacturas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -125,6 +126,11 @@ public class FrmMenu extends javax.swing.JFrame {
     private void btnFacturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturasMouseClicked
        new FrmFacturas().setVisible(true);
     }//GEN-LAST:event_btnFacturasMouseClicked
+
+    private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
+        // TODO add your handling code here:
+        new RegistroEmpleados().setVisible(true);
+    }//GEN-LAST:event_btnEmpleadosActionPerformed
 
     /**
      * @param args the command line arguments

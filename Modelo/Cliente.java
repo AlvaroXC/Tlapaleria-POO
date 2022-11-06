@@ -8,7 +8,7 @@ public class Cliente {
      private String rfc;
    
      //Constructor
-     public cliente(String codCliente, String nombre, String apPat, String apMat, String rfc) {
+     public Cliente(String codCliente, String nombre, String apPat, String apMat, String rfc) {
         this.codCliente = codCliente;
         this.nombre = nombre;
         this.apPat = apPat;
