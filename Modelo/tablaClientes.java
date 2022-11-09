@@ -126,7 +126,11 @@ public void cargardatos(){
         
         
     }//GEN-LAST:event_BotAñadirActionPerformed
-
+ private void txtMenuActionPerformed(java.awt.event.ActionEvent evt) {                                        
+       FrmMenu V2= new FrmMenu();
+       v2.setVisible(true);
+        this.dispose();
+    }      
     /**
      * @param args the command line arguments
      */
