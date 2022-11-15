@@ -172,6 +172,7 @@ public class FrmEmpleado extends javax.swing.JFrame {
 
     private void botonRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarMouseClicked
         // TODO add your handling code here:
+        new RegistroEmpleados().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botonRegresarMouseClicked
 
