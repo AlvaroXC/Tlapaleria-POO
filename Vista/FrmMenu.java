@@ -1,6 +1,6 @@
 package Vista;
 
-import Vista.FrmInventario;
+import Vista.*;
 
 public class FrmMenu extends javax.swing.JFrame {
 
@@ -54,6 +54,11 @@ public class FrmMenu extends javax.swing.JFrame {
         btnClientes.setBackground(new java.awt.Color(0, 153, 153));
         btnClientes.setText("Clientes");
         btnClientes.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesActionPerformed(evt);
+            }
+        });
 
         btnFacturas.setBackground(new java.awt.Color(0, 153, 153));
         btnFacturas.setText("Facturas");
@@ -131,6 +136,12 @@ public class FrmMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         new RegistroEmpleados().setVisible(true);
     }//GEN-LAST:event_btnEmpleadosActionPerformed
+
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
+
+        // TODO add your handling code here:
+        new FrmClientes().setVisible(true);
+    }//GEN-LAST:event_btnClientesActionPerformed
 
     /**
      * @param args the command line arguments

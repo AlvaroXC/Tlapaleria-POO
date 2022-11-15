@@ -1,19 +1,20 @@
+package Vista;
 
-package clientes;
-
+import Modelo.Cliente;
+import Vista.RegistroClientes;
 import javax.swing.table.DefaultTableModel;
 
 
 
 
 
-public class tablaClientes extends javax.swing.JFrame {
+public class FrmClientes extends javax.swing.JFrame {
     //tabla
 private DefaultTableModel modelo;
 int contador=0;
   
     
-    public tablaClientes() {
+    public FrmClientes() {
         
 
         initComponents();
@@ -27,9 +28,9 @@ public void cargarInterfaz(){
     tabla.setModel(modelo);
 }
 public void cargardatos(){
-    cliente a;
-    for (int i=0; i<añadirC.contenedor.size(); i++){
-        a=(cliente)añadirC.contenedor.get(i);
+    Cliente a;
+    for (int i=0; i<RegistroClientes.contenedor.size(); i++){
+        a=(Cliente)RegistroClientes.contenedor.get(i);
         modelo.insertRow(contador, new Object[]{});
         modelo.setValueAt(a.getCodCliente(),contador,0);
         modelo.setValueAt(a.getNombre(),contador,1);
@@ -81,6 +82,11 @@ public void cargardatos(){
         jLabel8.setText("Clientes");
 
         txtMenu.setText("Menu");
+        txtMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtMenuMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,13 +125,18 @@ public void cargardatos(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotAñadirActionPerformed
-        añadirC v1 = new añadirC();
+        RegistroClientes v1 = new RegistroClientes();
        
         v1.setVisible(true);
         this.dispose();
         
         
     }//GEN-LAST:event_BotAñadirActionPerformed
+
+    private void txtMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMenuMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_txtMenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -144,20 +155,21 @@ public void cargardatos(){
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(tablaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(tablaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(tablaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(tablaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new tablaClientes().setVisible(true);
+                new FrmClientes().setVisible(true);
             }
         });
     }
