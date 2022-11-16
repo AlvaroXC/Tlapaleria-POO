@@ -19,64 +19,49 @@ public class Factura implements Pagar{
         this.fecha = fecha;
     }
 
-
     public void setCodArt(String codArt) {
         this.codArt = codArt;
     }
-
     public void setDesc(String desc) {
         this.desc = desc;
     }
-
     public void setPrecioUnitario(double precioUnitario) {
         this.precioUnitario = precioUnitario;
     }
-
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-
     public void setCodCliente(String codCliente) {
         this.codCliente = codCliente;
     }
-
     public void setCodEmpleado(String codEmpleado) {
         this.codEmpleado = codEmpleado;
     }
-
     public void setFecha(Fecha fecha) {
         this.fecha = fecha;
     }
 
-
     public String getCodArt() {
         return codArt;
     }
-
     public String getDesc() {
         return desc;
     }
-
     public double getPrecioUnitario() {
         return precioUnitario;
     }
-
     public int getCantidad() {
         return cantidad;
     }
-
     public String getCodCliente() {
         return codCliente;
     }
-
     public String getCodEmpleado() {
         return codEmpleado;
     }
-
     public Fecha getFecha() {
         return fecha;
     }
-    
 
     public double calcularMontoPago(){
         return getPrecioUnitario()*getCantidad();

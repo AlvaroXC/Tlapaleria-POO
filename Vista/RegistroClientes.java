@@ -1,23 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista;
 
 import Modelo.Cliente;
 import java.util.LinkedList;
 
 
-/**
- *
- * @author jonat
- */
 public class RegistroClientes extends javax.swing.JFrame {
-//permite eliminar e insertar elementos en tiempo constatnte
+    //permite eliminar e insertar elementos en tiempo constatnte
     public static LinkedList contenedor = new LinkedList();
     public int buscar;
-    
-    
     
     public RegistroClientes() {
         initComponents();
@@ -148,30 +138,27 @@ public class RegistroClientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotAñadirCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotAñadirCActionPerformed
-     String codCliente = txtLd.getText();
-     String nombre = txtNom.getText();
-     String apPat = txtApp.getText();
-     String apMat = txtApm.getText();
-     String rfc = txtRfc.getText();
-     //nombre de la clase clientes con sus atributos
-     Cliente c1= new Cliente(codCliente, nombre, apPat, apMat, rfc);
-     contenedor.add(c1);
-  
-     //limpiar 
-     txtLd.setText("");
-     txtNom.setText("");
-     txtApp.setText("");
-     txtApm.setText("");
-     txtRfc.setText("");
-  
+        String codCliente = txtLd.getText();
+        String nombre = txtNom.getText();
+        String apPat = txtApp.getText();
+        String apMat = txtApm.getText();
+        String rfc = txtRfc.getText();
+        //nombre de la clase clientes con sus atributos
+        Cliente c1= new Cliente(codCliente, nombre, apPat, apMat, rfc);
+        contenedor.add(c1);
 
+        //limpiar 
+        txtLd.setText("");
+        txtNom.setText("");
+        txtApp.setText("");
+        txtApm.setText("");
+        txtRfc.setText("");
     }//GEN-LAST:event_BotAñadirCActionPerformed
 
     private void txtMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMostrarActionPerformed
        FrmClientes mostrar= new FrmClientes();
        mostrar.setVisible(true);
        this.dispose();
-       
     }//GEN-LAST:event_txtMostrarActionPerformed
 
     /**

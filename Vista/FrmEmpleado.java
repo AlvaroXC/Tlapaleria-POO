@@ -1,22 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista;
 
 import Inicio.InicioFerreteria;
 import Modelo.EmpleadoAsalariado;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author alvar
- */
+
 public class FrmEmpleado extends javax.swing.JFrame {
 
-    /**
-     * Creates new form EmpleadoAsalariado
-     */
     public FrmEmpleado() {
         initComponents();
         this.setSize(500, 500);
@@ -57,21 +47,11 @@ public class FrmEmpleado extends javax.swing.JFrame {
                 btnGuardarMouseClicked(evt);
             }
         });
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
-            }
-        });
 
         botonRegresar.setText("Regresar");
         botonRegresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonRegresarMouseClicked(evt);
-            }
-        });
-        botonRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRegresarActionPerformed(evt);
             }
         });
 
@@ -84,12 +64,6 @@ public class FrmEmpleado extends javax.swing.JFrame {
         lbApellidoMaterno.setText("Apellido Materno");
 
         lbSalario.setText("Salario");
-
-        TxtCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtCodigoActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,22 +136,12 @@ public class FrmEmpleado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TxtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtCodigoActionPerformed
-
-    private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonRegresarActionPerformed
-
     private void botonRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarMouseClicked
-        // TODO add your handling code here:
         new RegistroEmpleados().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botonRegresarMouseClicked
 
     private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
-        // TODO add your handling code here:
         String codEmpleado = this.TxtCodigo.getText();
         String nombre = this.TxtNombre.getText();
         String apellidoP = this.TxtApellidoP.getText();
@@ -195,11 +159,6 @@ public class FrmEmpleado extends javax.swing.JFrame {
         TxtSalario.setText("");
     }//GEN-LAST:event_btnGuardarMouseClicked
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardarActionPerformed
-
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TxtApellidoM;

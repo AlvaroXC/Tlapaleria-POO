@@ -30,5 +30,4 @@ public class EmpleadoAsalariado extends Empleado{
     public String toString() {
         return super.toString() + "\nSalario Semanal: " + getSalarioSemanal();
     }
-    
 }

@@ -17,16 +17,13 @@ public abstract class Empleado implements Pagar{
     //Métodos set
     public void setCodEmpleado(String codEmpleado){
         this.codEmpleado = codEmpleado;
-    }
-    
+    }    
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
-
     public void setApPaterno(String apPat){
         this.apPat = apPat;
     }
-
     public void setApMaterno(String apMat){
         this.apMat = apMat;
     }
@@ -35,15 +32,12 @@ public abstract class Empleado implements Pagar{
     public String getCodEmpleado(){
         return codEmpleado;
     }
-    
     public String getNombre() {
         return nombre;
     }
-
     public String getApPat() {
         return apPat;
     }
-
     public String getApMat() {
         return apMat;
     }
