@@ -1,22 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista;
 
 import Inicio.InicioFerreteria;
 import Modelo.Articulo;
-import javax.swing.JOptionPane;
 
-/**
- *
- * @author aitor
- */
+
 public class FrmAgregarArticulo extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmAgregarArticulo
-     */
     public FrmAgregarArticulo() {
         initComponents();
     }
@@ -43,7 +32,6 @@ public class FrmAgregarArticulo extends javax.swing.JFrame {
         btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 500));
 
         lbTitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lbTitulo.setText("Nuevo Artículo");
@@ -60,39 +48,10 @@ public class FrmAgregarArticulo extends javax.swing.JFrame {
         lbCant.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lbCant.setText("Cantidad:");
 
-        txtCodArt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodArtActionPerformed(evt);
-            }
-        });
-
-        txtDesc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDescActionPerformed(evt);
-            }
-        });
-
-        txtPrecioUnitario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPrecioUnitarioActionPerformed(evt);
-            }
-        });
-
-        txtCant.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantActionPerformed(evt);
-            }
-        });
-
         btnGuardar.setText("Guardar");
         btnGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnGuardarMouseClicked(evt);
-            }
-        });
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
             }
         });
 
@@ -164,22 +123,6 @@ public class FrmAgregarArticulo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCodArtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodArtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodArtActionPerformed
-
-    private void txtDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDescActionPerformed
-
-    private void txtPrecioUnitarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioUnitarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPrecioUnitarioActionPerformed
-
-    private void txtCantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantActionPerformed
-
     private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
         String codArticulo = this.txtCodArt.getText();
         String desc = this.txtDesc.getText();
@@ -197,14 +140,9 @@ public class FrmAgregarArticulo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarMouseClicked
 
     private void btnRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegresarMouseClicked
-        // TODO add your handling code here:
         new FrmInventario().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresarMouseClicked
-
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -1,18 +1,12 @@
-
 package Vista;
 
 import Inicio.InicioFerreteria;
 import Modelo.Fecha;
 import Modelo.Factura;
-import java.util.ArrayList;
-import javax.swing.table.DefaultTableModel;
-
 
 
 public class RegistroFacturas extends javax.swing.JFrame {
     
-    DefaultTableModel modelo=new DefaultTableModel();
-    ArrayList<Factura> listaFacturas=new ArrayList<Factura>();
     public RegistroFacturas() {
         initComponents();
         this.setTitle("Registro de Facturas");
@@ -62,22 +56,11 @@ public class RegistroFacturas extends javax.swing.JFrame {
 
         jLabel7.setText("Fecha");
 
-        TxtCodCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtCodClienteActionPerformed(evt);
-            }
-        });
-
         TxtaDesc.setColumns(20);
         TxtaDesc.setRows(5);
         jScrollPane2.setViewportView(TxtaDesc);
 
         cboMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", " " }));
-        cboMes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboMesActionPerformed(evt);
-            }
-        });
 
         spnDia.setModel(new javax.swing.SpinnerNumberModel(1, null, 31, 1));
 
@@ -89,11 +72,6 @@ public class RegistroFacturas extends javax.swing.JFrame {
         btnRegresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRegresarMouseClicked(evt);
-            }
-        });
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
             }
         });
 
@@ -207,17 +185,7 @@ public class RegistroFacturas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TxtCodClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCodClienteActionPerformed
-        
-    }//GEN-LAST:event_TxtCodClienteActionPerformed
-
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-
-        //new FrmMenu().setVisible(true);
-    }//GEN-LAST:event_btnRegresarActionPerformed
-
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-
         String codArt = this.TxtCodArt.getText();
         String desc = this.TxtaDesc.getText();
         double precioUnitario = Double.parseDouble(this.spnPrecioUnitario.getValue().toString());
@@ -227,7 +195,6 @@ public class RegistroFacturas extends javax.swing.JFrame {
         int dia= Integer.parseInt(this.spnDia.getValue().toString());
         int mes= Integer.parseInt(this.cboMes.getSelectedItem().toString());
         int anio= Integer.parseInt(this.spnAnio.getValue().toString());
-
         
         Fecha date = new Fecha(dia,mes,anio);
         Factura unafactura= new Factura(codArt, desc,precioUnitario,  cant, codCliente, codEmpleado,  date);
@@ -245,12 +212,7 @@ public class RegistroFacturas extends javax.swing.JFrame {
         this.spnAnio.setValue(2022);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void cboMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboMesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cboMesActionPerformed
-
     private void btnRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegresarMouseClicked
-        // TODO add your handling code here:
         new FrmFacturas().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresarMouseClicked

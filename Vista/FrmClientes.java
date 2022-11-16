@@ -1,49 +1,41 @@
 package Vista;
 
 import Modelo.Cliente;
-import Vista.RegistroClientes;
 import javax.swing.table.DefaultTableModel;
-
-
-
 
 
 public class FrmClientes extends javax.swing.JFrame {
     //tabla
-private DefaultTableModel modelo;
-int contador=0;
-  
+    private DefaultTableModel modelo;
+    int contador=0;
     
     public FrmClientes() {
-        
-
         initComponents();
         cargarInterfaz();
         cargardatos();
     }
-public void cargarInterfaz(){
-    String datos[][]={};
-    String columna[]={"ID", "NOMBRE", "APELLIDO M", "APELIIDO P", "RFC"};
-    modelo= new DefaultTableModel(datos, columna);
-    tabla.setModel(modelo);
-}
-public void cargardatos(){
-    Cliente a;
-    for (int i=0; i<RegistroClientes.contenedor.size(); i++){
-        a=(Cliente)RegistroClientes.contenedor.get(i);
-        modelo.insertRow(contador, new Object[]{});
-        modelo.setValueAt(a.getCodCliente(),contador,0);
-        modelo.setValueAt(a.getNombre(),contador,1);
-        modelo.setValueAt(a.getApPat(),contador,2);
-        modelo.setValueAt(a.getApMat(),contador,3);
-        modelo.setValueAt(a.getRfc(),contador,4);
-        
-        
-        
+    
+    public void cargarInterfaz(){
+        String datos[][]={};
+        String columna[]={"Índice", "ID", "NOMBRE", "APELLIDO M.", "APELIIDO P.", "RFC"};
+        modelo= new DefaultTableModel(datos, columna);
+        tabla.setModel(modelo);
     }
     
+    public void cargardatos(){
+        Cliente a;
+        for (int i=0; i<RegistroClientes.contenedor.size(); i++){
+            a=(Cliente)RegistroClientes.contenedor.get(i);
+            modelo.insertRow(contador, new Object[]{});
+            modelo.setValueAt(i, contador, 0);
+            modelo.setValueAt(a.getCodCliente(),contador,1);
+            modelo.setValueAt(a.getNombre(),contador,2);
+            modelo.setValueAt(a.getApPat(),contador,3);
+            modelo.setValueAt(a.getApMat(),contador,4);
+            modelo.setValueAt(a.getRfc(),contador,5);
+        }
+    }
     
-}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -129,12 +121,9 @@ public void cargardatos(){
        
         v1.setVisible(true);
         this.dispose();
-        
-        
     }//GEN-LAST:event_BotAñadirActionPerformed
 
     private void txtMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMenuMouseClicked
-        // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_txtMenuMouseClicked
 

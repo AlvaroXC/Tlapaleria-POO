@@ -1,12 +1,8 @@
 package Vista;
 
-import Vista.*;
 
 public class FrmMenu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmMenu
-     */
     public FrmMenu() {
         initComponents();
     }
@@ -45,11 +41,6 @@ public class FrmMenu extends javax.swing.JFrame {
                 btnInventarioMouseClicked(evt);
             }
         });
-        btnInventario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInventarioActionPerformed(evt);
-            }
-        });
 
         btnClientes.setBackground(new java.awt.Color(0, 153, 153));
         btnClientes.setText("Clientes");
@@ -66,11 +57,6 @@ public class FrmMenu extends javax.swing.JFrame {
         btnFacturas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnFacturasMouseClicked(evt);
-            }
-        });
-        btnFacturas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFacturasActionPerformed(evt);
             }
         });
 
@@ -115,31 +101,19 @@ public class FrmMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnFacturasActionPerformed
-
     private void btnInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseClicked
-        // TODO add your handling code here:
         new FrmInventario().setVisible(true);
     }//GEN-LAST:event_btnInventarioMouseClicked
-
-    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInventarioActionPerformed
 
     private void btnFacturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturasMouseClicked
        new FrmFacturas().setVisible(true);
     }//GEN-LAST:event_btnFacturasMouseClicked
 
     private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
-        // TODO add your handling code here:
         new RegistroEmpleados().setVisible(true);
     }//GEN-LAST:event_btnEmpleadosActionPerformed
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-
-        // TODO add your handling code here:
         new FrmClientes().setVisible(true);
     }//GEN-LAST:event_btnClientesActionPerformed
 

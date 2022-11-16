@@ -1,7 +1,6 @@
 package Modelo;
 
 public class Articulo {
-
     private String codArt;
     private String desc;
     private double precioUnitario;
@@ -13,7 +12,6 @@ public class Articulo {
         this.precioUnitario = precioUnitario;
         this.cantidad = cantidad;
     }
-    
     
     public void setCodArt(String codArt) {
         this.codArt = codArt;
@@ -27,7 +25,6 @@ public class Articulo {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    
     
     public String getCodArt() {
         return codArt;
@@ -44,7 +41,6 @@ public class Articulo {
 
     @Override
     public String toString(){
-
         return "Código de artículo: "+getCodArt()+"\nDescripción: "+getDesc()+"\nPrecio unitario: "+getPrecioUnitario()+"\nCantidad: "+getCantidad();
     }
 }

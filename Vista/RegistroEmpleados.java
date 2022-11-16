@@ -1,38 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista;
 
-//import Modelo.TablaEmpleados;
-
 import Modelo.TablaEmpleados;
-//import  javax.swing.table.DefaultTableModel;
 
 
-/**
- *
- * @author alvar
- */
 public class RegistroEmpleados extends javax.swing.JFrame {
     public TablaEmpleados model= new TablaEmpleados();
 
-    /**
-     * Creates new form TablaEmpleados
-     */
     public RegistroEmpleados() {
         initComponents();
         this.setSize(800, 600);
         this.setLocationRelativeTo(null);
         this.setTitle("Tabla Empleados");
         iniciarTabla();
-        
     }
     
     public void iniciarTabla(){
-        model.inicializar(tablaEMP);
-        
-        
+        model.inicializar(tablaEMP);        
     }
 
     /**
@@ -110,13 +93,11 @@ public class RegistroEmpleados extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        // TODO add your handling code here:
-       new FrmEmpleado().setVisible(true);
-       this.dispose();
+        new FrmEmpleado().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 

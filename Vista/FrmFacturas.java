@@ -1,14 +1,9 @@
-
 package Vista;
 
-import Vista.RegistroFacturas;
-import Modelo.Factura;
 import Modelo.TablaFacturas;
-import java.util.ArrayList;
-import javax.swing.table.DefaultTableModel;
+
 
 public class FrmFacturas extends javax.swing.JFrame {
-    
     public TablaFacturas modelo = new TablaFacturas();
 
     public FrmFacturas() {
@@ -17,7 +12,6 @@ public class FrmFacturas extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setSize(800, 600);
         iniciarTabla();
-        //refrescartabla();
     }
     
     public void iniciarTabla(){
@@ -102,13 +96,11 @@ public class FrmFacturas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        
         new RegistroFacturas().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-
         this.dispose();
     }//GEN-LAST:event_btnMenuActionPerformed
 
@@ -153,22 +145,4 @@ public class FrmFacturas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
-
-    /*private void refrescartabla() {
-        while(modelo.getRowCount()>0){
-            modelo.removeRow(0);
-        }
-        for(Factura factura:listaFacturas){
-            Object a[]=new Object[7];
-            a[0]=factura.getCodArt();
-            a[1]=factura.getDesc();
-            a[2]=factura.getPrecioUnitario();
-            a[3]=factura.getCantidad();
-            a[4]=factura.getCodCliente();
-            a[5]=factura.getCodEmpleado();
-            a[6]=factura.getFecha();
-            modelo.addRow(a);
-        }
-        TblRegistroFacturas.setModel(modelo);
-    }*/
 }
