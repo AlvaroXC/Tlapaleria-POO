@@ -1,38 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Component class="javax.swing.JLabel" name="lbAviso">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="(-1 para eliminar la tabla)"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnRegresar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Regresar"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbTitulo1">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dialog" size="18" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Eliminar Factura"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbNumFila1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="N&#xfa;mero de fila:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtNumFila1">
-    </Component>
-    <Component class="javax.swing.JButton" name="btnAceptar1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Aceptar"/>
-      </Properties>
-    </Component>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -79,7 +47,7 @@
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -124,7 +92,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Eliminar Factura"/>
+        <Property name="text" type="java.lang.String" value="Eliminar Empleado"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbNumFila">
