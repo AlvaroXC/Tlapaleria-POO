@@ -1,12 +1,23 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package Vista;
 
 import Inicio.InicioFerreteria;
 
+/**
+ *
+ * @author alvar
+ */
+public class FrmEliminarEmpleado extends javax.swing.JFrame {
 
-public class FrmEliminarArticulo extends javax.swing.JFrame {
-
-    public FrmEliminarArticulo() {
+    /**
+     * Creates new form FrmEliminarEmpleado
+     */
+    public FrmEliminarEmpleado() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -18,29 +29,12 @@ public class FrmEliminarArticulo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbAviso = new javax.swing.JLabel();
-        btnRegresar = new javax.swing.JButton();
-        lbTitulo1 = new javax.swing.JLabel();
-        lbNumFila1 = new javax.swing.JLabel();
-        txtNumFila1 = new javax.swing.JTextField();
-        btnAceptar1 = new javax.swing.JButton();
         lbAviso1 = new javax.swing.JLabel();
         btnRegresar1 = new javax.swing.JButton();
         lbTitulo = new javax.swing.JLabel();
         lbNumFila = new javax.swing.JLabel();
         txtNumFila = new javax.swing.JTextField();
         btnAceptar = new javax.swing.JButton();
-
-        lbAviso.setText("(-1 para eliminar la tabla)");
-
-        btnRegresar.setText("Regresar");
-
-        lbTitulo1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lbTitulo1.setText("Eliminar Factura");
-
-        lbNumFila1.setText("Número de fila:");
-
-        btnAceptar1.setText("Aceptar");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,7 +48,7 @@ public class FrmEliminarArticulo extends javax.swing.JFrame {
         });
 
         lbTitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lbTitulo.setText("Eliminar Factura");
+        lbTitulo.setText("Eliminar Empleado");
 
         lbNumFila.setText("Número de fila:");
 
@@ -87,7 +81,7 @@ public class FrmEliminarArticulo extends javax.swing.JFrame {
                             .addComponent(lbAviso1)
                             .addComponent(lbTitulo))
                         .addGap(15, 15, 15)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,20 +105,20 @@ public class FrmEliminarArticulo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegresar1MouseClicked
-        new FrmInventario().setVisible(true);
+       new RegistroEmpleados().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresar1MouseClicked
 
     private void btnAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAceptarMouseClicked
         int numFila = Integer.parseInt(this.txtNumFila.getText());
         if(numFila == -1){
-            InicioFerreteria.listaInventario.clear();
+            InicioFerreteria.listaEmpleados.clear();
         }
         else{
-            InicioFerreteria.listaInventario.remove(numFila);
+            InicioFerreteria.listaEmpleados.remove(numFila);
         }
-        
-        new FrmInventario().setVisible(true);
+
+        new RegistroEmpleados().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAceptarMouseClicked
 
@@ -145,36 +139,30 @@ public class FrmEliminarArticulo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmEliminarArticulo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmEliminarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmEliminarArticulo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmEliminarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmEliminarArticulo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmEliminarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmEliminarArticulo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmEliminarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmEliminarArticulo().setVisible(true);
+                new FrmEliminarEmpleado().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
-    private javax.swing.JButton btnAceptar1;
-    private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnRegresar1;
-    private javax.swing.JLabel lbAviso;
     private javax.swing.JLabel lbAviso1;
     private javax.swing.JLabel lbNumFila;
-    private javax.swing.JLabel lbNumFila1;
     private javax.swing.JLabel lbTitulo;
-    private javax.swing.JLabel lbTitulo1;
     private javax.swing.JTextField txtNumFila;
-    private javax.swing.JTextField txtNumFila1;
     // End of variables declaration//GEN-END:variables
 }
