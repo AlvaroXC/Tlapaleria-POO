@@ -65,6 +65,12 @@ public class FrmEmpleado extends javax.swing.JFrame {
 
         lbSalario.setText("Salario");
 
+        TxtSalario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtSalarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -142,22 +148,34 @@ public class FrmEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarMouseClicked
 
     private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
-        String codEmpleado = this.TxtCodigo.getText();
-        String nombre = this.TxtNombre.getText();
-        String apellidoP = this.TxtApellidoP.getText();
-        String apellidoM = this.TxtApellidoM.getText();
-        double salario = Double.parseDouble(this.TxtSalario.getText());
+        try{
+            
+
+            String codEmpleado = this.TxtCodigo.getText();
+            String nombre = this.TxtNombre.getText();
+            String apellidoP = this.TxtApellidoP.getText();
+            String apellidoM = this.TxtApellidoM.getText();
+            double salario = Double.parseDouble(this.TxtSalario.getText());
+
+            EmpleadoAsalariado unEmpleado = new EmpleadoAsalariado(codEmpleado, nombre, apellidoP, apellidoM, salario);
+            InicioFerreteria.listaEmpleados.add(unEmpleado);  
+            JOptionPane.showMessageDialog(null, "Datos almacenados");
+
+            TxtCodigo.setText("");
+            TxtNombre.setText("");
+            TxtApellidoP.setText("");
+            TxtApellidoM.setText("");
+            TxtSalario.setText("");
+
         
-        EmpleadoAsalariado unEmpleado = new EmpleadoAsalariado(codEmpleado, nombre, apellidoP, apellidoM, salario);
-        InicioFerreteria.listaEmpleados.add(unEmpleado);  
-        JOptionPane.showMessageDialog(null, "Datos almacenados");
-        
-        TxtCodigo.setText("");
-        TxtNombre.setText("");
-        TxtApellidoP.setText("");
-        TxtApellidoM.setText("");
-        TxtSalario.setText("");
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Verifique que los datos sean correctos");
+        }
     }//GEN-LAST:event_btnGuardarMouseClicked
+
+    private void TxtSalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtSalarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtSalarioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
