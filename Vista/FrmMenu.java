@@ -104,18 +104,22 @@ public class FrmMenu extends javax.swing.JFrame {
 
     private void btnInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseClicked
         new FrmInventario().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnInventarioMouseClicked
 
     private void btnFacturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturasMouseClicked
        new FrmFacturas().setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_btnFacturasMouseClicked
 
     private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
         new RegistroEmpleados().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnEmpleadosActionPerformed
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
         new FrmClientes().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnClientesActionPerformed
 
     /**

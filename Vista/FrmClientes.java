@@ -125,6 +125,7 @@ public class FrmClientes extends javax.swing.JFrame {
 
     private void txtMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMenuMouseClicked
         this.dispose();
+        new FrmMenu().setVisible(true);
     }//GEN-LAST:event_txtMenuMouseClicked
 
     /**

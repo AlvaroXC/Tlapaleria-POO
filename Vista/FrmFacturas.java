@@ -102,6 +102,7 @@ public class FrmFacturas extends javax.swing.JFrame {
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         this.dispose();
+        new FrmMenu().setVisible(true);
     }//GEN-LAST:event_btnMenuActionPerformed
 
     
