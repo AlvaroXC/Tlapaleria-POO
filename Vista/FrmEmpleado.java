@@ -2,11 +2,16 @@ package Vista;
 
 import Inicio.InicioFerreteria;
 import Modelo.EmpleadoAsalariado;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
 
 public class FrmEmpleado extends javax.swing.JFrame {
-
+    
+    public static LinkedList contenedor2= new LinkedList();
     public FrmEmpleado() {
         initComponents();
         this.setSize(500, 500);
@@ -151,15 +156,25 @@ public class FrmEmpleado extends javax.swing.JFrame {
         try{
             
 
-            String codEmpleado = this.TxtCodigo.getText();
-            String nombre = this.TxtNombre.getText();
-            String apellidoP = this.TxtApellidoP.getText();
-            String apellidoM = this.TxtApellidoM.getText();
-            double salario = Double.parseDouble(this.TxtSalario.getText());
+            String codEmpleado = this.TxtCodigo.getText().trim();
+            String nombre = this.TxtNombre.getText().trim();
+            String apellidoP = this.TxtApellidoP.getText().trim();
+            String apellidoM = this.TxtApellidoM.getText().trim();
+            double salario = Double.parseDouble(this.TxtSalario.getText().trim());
 
             EmpleadoAsalariado unEmpleado = new EmpleadoAsalariado(codEmpleado, nombre, apellidoP, apellidoM, salario);
-            InicioFerreteria.listaEmpleados.add(unEmpleado);  
-            JOptionPane.showMessageDialog(null, "Datos almacenados");
+            //InicioFerreteria.listaEmpleados.add(unEmpleado);  
+            contenedor2.add(unEmpleado);
+            //JOptionPane.showMessageDialog(null, "Datos almacenados");
+            try{
+                FileWriter bw = new FileWriter("Empleados.txt", true);
+                PrintWriter pw = new PrintWriter(bw);    
+                pw.format("%s,%s,%s,%s,%s\n",codEmpleado, nombre, apellidoP, apellidoM, salario);
+                pw.close();
+            }catch(IOException e1){
+                JOptionPane.showMessageDialog(null, "Error");
+                
+            }
 
             TxtCodigo.setText("");
             TxtNombre.setText("");
