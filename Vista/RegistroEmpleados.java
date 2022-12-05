@@ -1,21 +1,72 @@
 package Vista;
 
+import Modelo.EmpleadoAsalariado;
 import Modelo.TablaEmpleados;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 
 public class RegistroEmpleados extends javax.swing.JFrame {
     public TablaEmpleados model= new TablaEmpleados();
+    private ArrayList<EmpleadoAsalariado> Empleado;
 
+    
+    private void cerrar(){
+        String botones[]= {"cerrar", "cancelar"};
+        int eleccion= JOptionPane.showOptionDialog(this,"¿Desea cerrar la aplicacion?","Titulo",0,0,null,botones,this);
+        if(eleccion==JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
+        else if(eleccion==JOptionPane.NO_OPTION){
+            System.out.println("se canceló el cierre");
+
+        }
+    
+    }
+    
     public RegistroEmpleados() {
         initComponents();
         this.setSize(800, 600);
         this.setLocationRelativeTo(null);
         this.setTitle("Tabla Empleados");
-        iniciarTabla();
+        //iniciarTabla();
+        cargarInterfaz();
+        //argarDatos();
     }
     
-    public void iniciarTabla(){
-        model.inicializar(tablaEMP);        
+    DefaultTableModel modelo;
+    
+    public void cargarInterfaz(){
+        this.Empleado= new ArrayList<>();
+        String datos[][]={};
+        String columna []={"Codigo De Empleado", "Nombre", "Apellido Paterno", "Apellido Materno", "Salario"};
+        modelo= new DefaultTableModel(datos, columna);
+        tablaEMP.setModel(modelo);
+        
+        String Au = "Empleados.txt";
+        Scanner linea = null;
+        File doc = new File(Au);
+        try{
+            linea= new Scanner(doc);
+            while(linea.hasNextLine()){
+                StringTokenizer token = new StringTokenizer(linea.nextLine(), ",");
+                EmpleadoAsalariado empleado = new EmpleadoAsalariado(token.nextToken(), token.nextToken(), token.nextToken(), token.nextToken(), Double.parseDouble(token.nextToken())); 
+                modelo.addRow(new Object[] {empleado.getCodEmpleado(), empleado.getNombre(), empleado.getApPat(), empleado.getApMat(), empleado.getSalarioSemanal()});
+            }
+            
+        }catch(FileNotFoundException x){
+            JOptionPane.showMessageDialog(null, "Error");
+
+            
+        }
     }
 
     /**
@@ -105,7 +156,9 @@ public class RegistroEmpleados extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        new FrmEmpleado().setVisible(true);
+        //new FrmEmpleado().setVisible(true);
+        FrmEmpleado v1= new FrmEmpleado();
+        v1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
@@ -116,8 +169,28 @@ public class RegistroEmpleados extends javax.swing.JFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-        new FrmEliminarEmpleado().setVisible(true);
-        this.dispose();
+       // new FrmEliminarEmpleado().setVisible(true);
+        //this.dispose();
+        try{
+            DefaultTableModel dtm = (DefaultTableModel) tablaEMP.getModel();
+            int fila = tablaEMP.getSelectedRow();
+            this.Empleado.remove(fila);
+            dtm.removeRow(fila);
+
+            try{
+                FileWriter bw = new FileWriter("Empleados.txt");
+                PrintWriter pw = new PrintWriter(bw);
+                for(EmpleadoAsalariado empleado: this.Empleado){
+                    pw.format("%s,%s, %s, %s, %s\n", empleado.getCodEmpleado(), empleado.getNombre(), empleado.getApPat(), empleado.getApMat(), empleado.getSalarioSemanal());
+                }
+            }catch(IOException x){
+                JOptionPane.showMessageDialog(null, "Generando nuevo archivo");
+
+            }
+        }catch(IndexOutOfBoundsException e){
+            JOptionPane.showMessageDialog(null, "Debes seleccionar una linea");
+        }
+            
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
